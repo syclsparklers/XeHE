@@ -1,0 +1,9 @@
+Figures directory has source files to generate Figures 3-5, 7-8, 10-26.
+Figures 3-5, 7-8 & 10-12 are plotted in PowerPoint. Figure indices are marked in each slide.
+Figures 13-21, 23, 25-26 are plotted via MATLAB scripts so the
+scripts, raw matlab data files & matlab figure files (.fig) are all
+provided in distinct folders. They are validated in MATLAB R2021b, and
+any newer version should work.
+Figures 22 & 24 are plotted in Excel. Figure indices are marked in each sheet.
+Figures 13 and 14 may be backwards from the book.
+Yes, a few source files are not here. We may find them and add later. We might not. :)

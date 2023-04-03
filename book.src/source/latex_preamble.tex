@@ -1,0 +1,289 @@
+%%
+%% I love "open", and I have ever since I first programmed in the 1980s (lots of free exchanging of software long before we knew so much)
+%% I have often found it more difficult to follow in others footsteps, because much of the "details" are left as exercises for the reader. :)
+%%
+%% I'm sharing the complete set of files to build this book, as messy as they may be
+%% From my conversations with others - I came to realize that everyone does messy little things to make everything work that they are embarrassed to share
+%% because of this - they share the results, but not all the methods... because they are worried others can it better (yes - they can!  so what?)
+%%
+%% I am quite sure others have better solutions to things that I 'hack around'
+%% but, my solution works - and I share it completely
+%% As we all do, I stand on the shoulders of giants
+%% I am honored if I lift anyone else up even a tiny bit with anything I add
+%%
+%% I hope it is useful, not because it is perfect... but because it is complete, and can improved upon freely
+%%
+%% C++ with SYCL is offered in the same vein - let's be very open
+%%
+%%
+%% James Reinders, 2023
+%% Customizations for Sphinx+LaTex -> PDF formatting for Sparklers
+%%
+
+%%\pdfminorversion=6 %% allow PDF 1.6 instead of demand 1.5 or lower for input graphics
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{lipsum}
+\usepackage{lineno}
+\hyphenpenalty=5000
+\tolerance=1000
+
+\newcommand{\SparklerCoverImage}{39926452903_0141aa2fe2_o.jpg}
+\newcommand{\SparklerLogo}{SYCLsparklerWhiteOnTransparentOutlined.png}
+\newcommand{\SparklerLogoBW}{SYCLsparklerBlackOnTransparent.png}
+\newcommand{\SparklerCopyRightYear}{2023}
+\newcommand{\SparklerGithub}{URL-TBD-Github}
+\newcommand{\SparklerCoverCredit}{``Sparkler'' by Timo Newton-Syms, $flickr.com/photos/timo\_w2s/39926452903$, CC BY-SA 2.0}
+\newcommand{\SparklerISBNpaper}{979-8-88638-000-2}
+\newcommand{\SparklerISBNpaperbarcode}{Barcode-\SparklerISBNpaper.jpg}
+\newcommand{\SparklerISBNebook}{979-8-88638-001-9}
+\newcommand{\SparklerSeriesName}{a SYCL Sparkler}
+\newcommand{\SparklerNameShort}{XeHE}
+\newcommand{\SparklerNameA}{XeHE: An Intel GPU Accelerated}
+\newcommand{\SparklerNameB}{Fully Homomorphic Encryption Library}
+\definecolor{SparklerText}{HTML}{FFDF42}
+
+\setcounter{secnumdepth}{0} %<- No Section numbering at all
+
+\renewcommand{\chaptermark}[1]{ \markboth{{\SparklerNameShort}}{#1} }
+\renewcommand{\sectionmark}[1]{ \markboth{{\SparklerNameShort}}{#1} }
+\renewcommand{\subsectionmark}[1]{}
+
+\usepackage{enumitem}
+\setlistdepth{999}
+\renewlist{itemize}{itemize}{200}
+
+% initially, use dots for all levels
+\setlist[itemize]{label=$\cdot$}
+\setlist[itemize]{labelsep=.5em}
+
+% customize the first 39 levels (avoids stupid 'undefined' labelling - not sure why default above does not fix)
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=--}
+\setlist[itemize,3]{label=*}
+\setlist[itemize,4]{label=*}
+\setlist[itemize,5]{label=*}
+\setlist[itemize,6]{label=*}
+\setlist[itemize,7]{label=*}
+\setlist[itemize,8]{label=*}
+\setlist[itemize,9]{label=*}
+\setlist[itemize,10]{label=*}
+\setlist[itemize,11]{label=*}
+\setlist[itemize,12]{label=*}
+\setlist[itemize,13]{label=*}
+\setlist[itemize,14]{label=*}
+\setlist[itemize,15]{label=*}
+\setlist[itemize,16]{label=*}
+\setlist[itemize,17]{label=*}
+\setlist[itemize,18]{label=*}
+\setlist[itemize,19]{label=*}
+\setlist[itemize,20]{label=*}
+\setlist[itemize,21]{label=*}
+\setlist[itemize,22]{label=*}
+\setlist[itemize,23]{label=*}
+\setlist[itemize,24]{label=*}
+\setlist[itemize,25]{label=*}
+\setlist[itemize,26]{label=*}
+\setlist[itemize,27]{label=*}
+\setlist[itemize,28]{label=*}
+\setlist[itemize,29]{label=*}
+\setlist[itemize,30]{label=*}
+\setlist[itemize,31]{label=*}
+\setlist[itemize,32]{label=*}
+\setlist[itemize,33]{label=*}
+\setlist[itemize,34]{label=*}
+\setlist[itemize,35]{label=*}
+\setlist[itemize,36]{label=*}
+\setlist[itemize,37]{label=*}
+\setlist[itemize,38]{label=*}
+\setlist[itemize,39]{label=*}
+
+\usepackage[pdftex,outline]{contour}
+
+\usepackage{eso-pic}
+
+\newcommand{\SparklerCoverPhoto}{ %
+\put(0,0){ %
+\parbox[b][\paperheight]{\paperwidth}{ %
+\centering %
+\includegraphics[%width=\paperwidth,% 
+height=\paperheight,keepaspectratio]{\SparklerCoverImage} %
+}}
+\put(0,0){ %
+\parbox[b][\paperheight]{\paperwidth}{ %
+\vfill %
+\raggedleft %
+\includegraphics[width=0.2\paperwidth,keepaspectratio]{\SparklerLogo} \hspace{0.5in} %
+\vspace{0.5in}
+}}
+}
+
+\newcommand{\SparklerBackCoverPhoto}{ %
+\put(0,0){ %
+\parbox[b][\paperheight]{\paperwidth}{ %
+\centering %
+\includegraphics[%width=\paperwidth,% 
+height=\paperheight,keepaspectratio]{\SparklerCoverImage} %
+}}
+\put(0,0){ %
+\parbox[b][\paperheight]{\paperwidth}{ %
+\vfill %
+\centering %
+\includegraphics[width=0.4\paperwidth,keepaspectratio]{\SparklerLogo} %
+\par
+\vspace{1cm}
+\tcbset{colframe=white!5!white, size=tight, boxrule=2mm, arc=2mm, auto outer arc, nobeforeafter}
+\tcbincludegraphics[width=0.3\paperwidth, graphics options={}]{\SparklerISBNpaperbarcode} %
+\par
+\vspace{0.6cm}
+}}
+}
+
+\newcommand{\SYCLsparklerLogoPage}{ %
+\put(0,0){ %
+\parbox[b][\paperheight]{\paperwidth}{ %
+\vfill %
+\centering %
+\includegraphics[width=0.5\paperwidth,keepaspectratio]{\SparklerLogoBW} %
+\vfill %
+}}
+}
+
+
+\newcommand{\sphinxmaketitle}{
+%%%%%%%\linenumbers % For PROOF only:: PROOFING LINE NUMBERS
+\addtolength\oddsidemargin  {0.55cm}
+\addtolength\evensidemargin {-0.55cm}
+%%\addtolength\headheight     {25pt}
+\AddToShipoutPicture*{\SparklerCoverPhoto}
+\frontmatter  %
+\pdfbookmark[0]{\SparklerNameA \SparklerNameB}{cover} %
+{\Large \raggedright \color{SparklerText} {\SparklerSeriesName}\par}  %
+{\LARGE \textbf \raggedright \color{white} {{\contour{black}{\textcolor{white}{\SparklerNameA}}}}\\{{\contour{black}{\textcolor{white}{\SparklerNameB}}}}\par}  %
+\clearpage %
+\AddToShipoutPicture*{\SYCLsparklerLogoPage}
+\cleardoublepage %
+{\raggedright \SparklerSeriesName \par}  %
+{\LARGE \textbf \raggedright {\SparklerNameA}\\{\SparklerNameB}\par}  %
+\vspace{20pt}
+{\normalsize %
+Alexander Lyashevsky, Intel Corporation, Santa Clara, CA, USA\\ %
+
+Alexey Titov, Intel Corporation, Santa Clara, CA, USA\\ %
+
+Yiqin Qiu, Intel Corporation, Santa Clara, CA, USA\\ %
+
+Yujia Zhai, University of California, Riverside, CA, USA\\ %
+}
+\vfill
+{\footnotesize Edited by James Reinders with assistance from Henry Gabb and John Pennycook}
+\newpage %
+{
+\raggedright
+\scriptsize
+Authors: Alexander Lyashevsky, Alexey Titov, Yiqin Qiu, and Yujia Zhai \\ %
+Editor: James Reinders \\%
+
+{Cover image \SparklerCoverCredit} \\%
+
+ISBN-13 (pbk): \SparklerISBNpaper \\%
+ISBN-13 (electronic): \SparklerISBNebook \\%
+
+Copyright © {\SparklerCopyRightYear} by Codeplay Software, an independently managed wholly owned subsidiary of Intel Corporation \\%
+\includegraphics[width=0.2\textwidth,keepaspectratio]{by-eps-converted-to.pdf}\\ %
+This book is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit {\tiny https://creativecommons.org/licenses/by/4.0/} or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+The images or other third party material in this book are included in the book’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the book’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.\\ %
+
+Trademarked names, logos, and images may appear in this book. Rather than use a trademark symbol with every occurrence of a trademarked name, logo, or image we use the names, logos, and images only in an editorial fashion and to the benefit of the trademark owner, with no intention of infringement of the trademark.\\ %
+The use in this publication of trade names, trademarks, service marks, and similar terms, even if they are not identified as such, is not to be taken as an expression of opinion as to whether or not they are subject to proprietary rights.\\ %
+Intel , the Intel logo, Intel Optane, and Xeon are trademarks of Intel Corporation in the U.S. and/or other countries. Khronos and the Khronos Group logo are trademarks of the Khronos Group Inc. in the U.S. and/or other countries. OpenCL and the OpenCL logo are trademarks of Apple Inc. in the U.S. and/or other countries. OpenMP and the OpenMP logo are trademarks of the OpenMP Architecture Review Board in the U.S. and/or other countries. SYCL and the SYCL logo are trademarks of the Khronos Group Inc. in the U.S. and/or other countries.\\ %
+
+While the advice and information in this book are believed to be true and accurate at the date of publication, neither the authors nor the editors nor the publisher can accept any legal responsibility for any errors or omissions that may be made. The authors, editors, copyright holder, and publisher make no warranty, express or implied, with respect to the material contained herein.\\ %
+Any source code or other supplementary material referenced is available to readers online. To find exactly where, visit the sparklers directory at {\tiny https://github.com/syclsparklers/directory/blob/main/README.md} (or use the tinyurl link: {\tiny https://tinyurl.com/syclsparklers}). \\%
+}
+}
+
+\makeatletter
+\newcommand{\cleartoleftpage}{
+\clearpage\ifodd\c@page
+\null
+\vspace*{\fill}
+\newpage
+\fi
+}
+\newcommand{\cleartorightpage}{
+\clearpage\ifodd\c@page\else
+\null
+\vspace*{\fill}
+\newpage
+\fi
+}
+\newcommand{\MyPrintIndexAndBackCover}{
+  \clearpage
+  \thispagestyle{normal}
+  %%\pdfbookmark[1]{Index}{myidx}
+  \markboth{{\SparklerNameShort}}{Index}
+  %% \printindex this translates to \@input@{\jobname.ind} defined in /usr/local/texlive/2022/texmf-dist/tex/latex/base/makeidx.sty
+  %% (found this with latexdef -p sphinx -f printindex)
+  %% the .ind file survives the build - and it starts with \begin{sphinxtheindex}
+  %% which is defined in the local sphinxhowto.cls
+  %% which uses the begin/end "theindex" which is where the capitalization of title, page/section formating, etc.
+  %% happens that I want to change...
+  %% so I override theindex environment from /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+  %% changed 3 lines as noted in comments below...
+\renewenvironment{theindex}
+               {\if@twocolumn
+                  \@restonecolfalse
+                \else
+                  \@restonecoltrue
+                \fi
+                \twocolumn[\section{\indexname}]% Prior definition upper cased the name - yuck (inconsistent with rest of book)
+                \@mkboth{{\SparklerNameShort}} {\indexname}% Prior definition of this screwed up left pages
+                \thispagestyle{normal}\parindent\z@ % using normal instead of plain here
+                \parskip\z@ \@plus .3\p@\relax
+                \columnseprule \z@
+                \columnsep 35\p@
+                \let\item\@idxitem}
+               {\if@restonecol\onecolumn\else\clearpage\fi}
+  \printindex %% Same as: \@input@{\jobname.ind} 
+  \clearpage
+  \ifodd\c@page\else
+    \thispagestyle{empty}
+    \AddToShipoutPicture*{\SYCLsparklerLogoPage} %% add a logo on the blank page if odd
+    \null %% noticable content so TeX prints the page
+    \clearpage %% want to exit with us on the RIGHT page (the inside of the back cover)
+  \fi  
+  \thispagestyle{empty}
+  \AddToShipoutPicture*{\SYCLsparklerLogoPage} %% inside of back cover
+  \null %% noticable content so TeX prints the page
+  \clearpage
+  \thispagestyle{empty}
+  \AddToShipoutPicture*{\SparklerBackCoverPhoto} %% back cover
+  \null %% noticable content so TeX prints the page
+}
+\makeatother
+
+\AtBeginDocument{%
+  %%%Nothing For Now
+}
+
+\AtEndDocument{%
+ %%%Nothing For Now
+}
+
+\makeatletter
+\renewcommand{\sphinxtableofcontents}{
+  \cleardoublepage
+  \pdfbookmark[1]{Table of Contents}{toc}
+  \begingroup
+    \parskip = 0mm
+    %%\tableofcontents
+    \section*{Table of Contents}%
+    \@starttoc{toc}%
+  \endgroup
+  \cleardoublepage
+  \mainmatter
+}  
+\makeatother
