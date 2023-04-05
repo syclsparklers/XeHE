@@ -18,12 +18,15 @@ clean: Makefile
 
 latex: Makefile
 	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-##	@mkdir -p "$(BUILDDIR)"/latex 
-##	@cp -p common/* "$(BUILDDIR)"/latex
+	@mkdir -p "$(BUILDDIR)"/latex 
+	@-cp -p source/_images/SYCL*.png   "$(BUILDDIR)"/latex
+	@-cp -p source/_images/Barcode*    "$(BUILDDIR)"/latex
+	@-cp -p source/_images/399264*     "$(BUILDDIR)"/latex
+	@-cp -p source/_images/by-eps*pdf  "$(BUILDDIR)"/latex
+	@mv "$(BUILDDIR)"/latex/Sparkler-XeHE.v001.tex "$(BUILDDIR)"/latex/originalTexoutput
+	@-sed -e 's@\\usepackage{hyperref}@\\usepackage\[hyphens\]{url}\\usepackage{hyperref}@' > "$(BUILDDIR)"/latex/Sparkler-XeHE.v001.tex < "$(BUILDDIR)"/latex/originalTexoutput
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-##	@mkdir -p "$(BUILDDIR)"/$@ 
-##	@cp -p common/* "$(BUILDDIR)"/figures/$@
