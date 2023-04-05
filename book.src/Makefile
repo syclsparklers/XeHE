@@ -16,9 +16,14 @@ help:
 clean: Makefile
 	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+latex: Makefile
+	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+##	@mkdir -p "$(BUILDDIR)"/latex 
+##	@cp -p common/* "$(BUILDDIR)"/latex
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@mkdir -p "$(BUILDDIR)"/$@ 
-	@cp -p common/* "$(BUILDDIR)"/$@
+##	@mkdir -p "$(BUILDDIR)"/$@ 
+##	@cp -p common/* "$(BUILDDIR)"/figures/$@

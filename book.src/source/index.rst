@@ -664,14 +664,14 @@ XeHE FHE GPU accelerating library has been designed to work as a backend of Micr
 the most popular open-source HE software packages and HE APIs. The overall XeHE architecture is
 depicted in :numref:`fig:xehe-arc`.
 
-.. figure:: figures/SEAL_XEHE_integration.png
+.. figure:: _images/SEAL_XEHE_integration.png
    :alt: SEAL XeHE integration
    :name: fig:xehe-arc
    :width: 80.0%
 
    SEAL XeHE integration
 
-.. figure:: figures/SEAL_XEHE_co_op.png
+.. figure:: _images/SEAL_XEHE_co_op.png
    :alt: SEAL-XeHE cooperation
    :name: fig:seal-xehe
    :width: 90.0%
@@ -777,7 +777,7 @@ HOST. The "HOST" client may run locally and "ACCELERATOR DEVICE" can
 process HE operators and the application logic locally or/and remotely
 in the cloud or on a separate dedicated server. :numref:`fig:gpu-async-cfg` depicts the client-server XeHE design.
 
-.. figure:: figures/asychronous-cfg_new_cropped.pdf
+.. figure:: _images/asychronous-cfg_new_cropped.png
    :alt: Client (CPU)/Server (GPU) control/data flow.
    :name: fig:gpu-async-cfg
    :width: 80.0%
@@ -1048,7 +1048,7 @@ its complexity.
    }
 
 
-.. figure:: figures/memcache-buffer_cropped_updated.pdf
+.. figure:: _images/memcache-buffer_cropped_updated.png
    :alt: Memory cache design
    :name: fig:mem-cache
    :width: 90.0%
@@ -1267,7 +1267,7 @@ pointer as available in the pool is shown in :numref:`code:Listing006`.
 Asynchronous Execution
 ----------------------
 
-.. figure:: figures/asynchronous-GPU_cropped_updated.pdf
+.. figure:: _images/asynchronous-GPU_cropped_updated.png
    :alt: Asynchronous execution scheme
    :width: 80.0%
    :name: fig:gpu-async
@@ -1395,7 +1395,7 @@ extensively to achieve a fast CPU-GPU functional correctness convergence.
    }
 
 
-.. figure:: figures/buffer_memcache.png
+.. figure:: _images/buffer_memcache.png
    :alt: Relationship among ciphertext, buffer and memcache
    :width: 80.0%
    :name: fig:buffer_memcache
@@ -1896,7 +1896,7 @@ optimization strategies.
 Unsigned Modular Addition (:math:`\mathtt{add\_mod}`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: figures/add_mod_cropped.pdf
+.. figure:: _images/add_mod_cropped.png
    :alt: Pseudo int64 addmod assembly
    :name: fig:inline-asm-add
    :width: 80.0%
@@ -1919,7 +1919,7 @@ pipeline.
 Unsigned Integer Multiplication (:math:`\mathtt{mul64}`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: figures/mul64_cropped.pdf
+.. figure:: _images/mul64_cropped.png
    :alt: Pseudo mul64 assembly
    :name: fig:inline-asm-mul
    :width: 80.0%
@@ -2075,7 +2075,7 @@ denotes 1024 batched instances of N-point NTT computation.
 
 .. index:: !NTT butterfly computation
    
-.. figure:: figures/ntt-butterfly.png
+.. figure:: _images/ntt-butterfly.png
    :alt: Optimized NTT butterfly computation
    :name: fig:butterfly-ntt
    :width: 50.0%
@@ -2171,7 +2171,7 @@ Register 0 of lanes 2, 3; similarly, lanes 4, 5 exchange their Register
 held in registers and exchanged among work-items in the same subgroup by
 SIMD shuffling until the gap size becomes equal to 1.
 
-.. figure:: figures/ntt_simd_shuffling_cropped.pdf
+.. figure:: _images/ntt_simd_shuffling_cropped.png
    :alt: SIMD shuffling for data exchanging in NTT.
    :name: fig:ntt-simd-shuffling
    :width: 60.0%
@@ -2195,7 +2195,7 @@ the NTT-related computation consumes
 6.25% of total GRF, indicating that the hardware is significantly
 underutilized at the register level.
 
-.. figure:: figures/multi_slot_reg_cropped.pdf
+.. figure:: _images/multi_slot_reg_cropped.png
    :alt: Multi-slot SIMD shuffling in NTT
    :name: fig:ntt-simd-shuffling-pseudo
    :width: 60.0%
@@ -2331,7 +2331,7 @@ parallelisms. To be more specific, the RNS base can be up to several
 dozen (Sangpyo Kim et al. 2020) while a batch size can be up to tens of
 thousands in real-world deep learning tasks(Keskar et al. 2016).
 
-.. figure:: figures/ntt_parallelism_cropped.pdf
+.. figure:: _images/ntt_parallelism_cropped.png
    :alt: The parallelism of NTT for HE
    :name: fig:ntt-parallelism
    :width: 70.0%
@@ -2375,7 +2375,7 @@ C++ (DPC++) Compiler (LLVM compiler that supports C++ with SYCL) :math:`\mathtt{
 optimization flag :math:`\mathtt{-O3}`.
 
 
-.. figure:: figures/profiling_B0_updated2_cropped.pdf
+.. figure:: _images/profiling_B0_updated2_cropped.png
    :alt: Profiling for HE routines on Device1
    :name: fig:profilingA
    :width: 70.0%
@@ -2383,7 +2383,7 @@ optimization flag :math:`\mathtt{-O3}`.
    Profiling for HE routines on Device1
 
 
-.. figure:: figures/profiling_A1_updated2_cropped.pdf
+.. figure:: _images/profiling_A1_updated2_cropped.png
    :alt: Profiling for HE routines on Device2
    :name: fig:profilingB
    :width: 70.0%
@@ -2401,7 +2401,7 @@ routines. Therefore, we start optimizations from this decisive
 algorithm.
 
 
-.. figure:: figures/simd_speedup_cropped.pdf
+.. figure:: _images/simd_speedup_cropped.png
    :alt: Speed-up on Radix-2 NTT with SLM and SIMD on Device1
    :name: fig:simd-benchA
    :width: 70.0%
@@ -2409,7 +2409,7 @@ algorithm.
    Speed-up on Radix-2 NTT with SLM and SIMD on Device1
 
 
-.. figure:: figures/simd_efficiency_cropped.pdf
+.. figure:: _images/simd_efficiency_cropped.png
    :alt: Efficiency of 32K-point NTT on Radix-2 NTT with SLM and SIMD on Device1
    :name: fig:simd-benchB
    :width: 70.0%
@@ -2471,7 +2471,7 @@ register-level data reuse and requires less data exchange among
 work-items, leads to the register spilling issue so its performance
 becomes significantly slower than radix-8 NTT.
 
-.. figure:: figures/simd_speedup_cropped.pdf
+.. figure:: _images/simd_speedup_cropped.png
    :alt: Speedup on High-radix NTT with SLM on Device1
    :name: fig:radix-benchA
    :width: 70.0%
@@ -2479,7 +2479,7 @@ becomes significantly slower than radix-8 NTT.
    Speedup on High-radix NTT with SLM on Device1
 
 
-.. figure:: figures/local_efficiency_cropped.pdf
+.. figure:: _images/local_efficiency_cropped.png
    :alt: Efficiency on High-radix NTT with SLM on Device1
    :name: fig:radix-benchB
    :width: 70.0%
@@ -2503,7 +2503,7 @@ cycle of the each int64 multiplication and modular addition operation,
 which is independent of the number of active EUs at runtime.
 
 
-.. figure:: figures/inline_asm_eff_cropped.pdf
+.. figure:: _images/inline_asm_eff_cropped.png
    :alt: NTT with inline-assembly on Device1
    :name: fig:nttA
    :width: 70.0%
@@ -2511,7 +2511,7 @@ which is independent of the number of active EUs at runtime.
    NTT with inline-assembly on Device1
 
 
-.. figure:: figures/dual-tile_cropped.pdf
+.. figure:: _images/dual-tile_cropped.png
    :alt: NTT with explicit dual tile on Device1
    :name: fig:nttB
    :width: 70.0%
@@ -2575,7 +2575,7 @@ This low operational density, as plotted in :numref:`fig:ntt-roofline`, suggests
 is bounded by the global memory bandwidth and can never reach the int64
 peak performance.
 
-.. figure:: figures/roofline_updated_cropped.pdf
+.. figure:: _images/roofline_updated_cropped.png
    :alt: Roofline Analysis on Device1
    :name: fig:ntt-roofline
    :width: 70.0%
@@ -2635,7 +2635,7 @@ evaluated ciphertexts are represented as tuples of vectors in
 :math:`\mathbb{Z}_{q_L}^N` where :math:`N=32`\ K and the RNS size is
 :math:`L=8`.
 
-.. figure:: figures/stacked_device1_cropped.pdf
+.. figure:: _images/stacked_device1_cropped.png
    :alt: Benchmarking HE evaluation routines on Device1
    :name: fig:routine-device1-bench
    :width: 80.0%
@@ -2683,7 +2683,7 @@ the performance by 28.48% in average from the previous step, we reach an
 up to 85.75% of the peak performance, 7.02X faster than the baseline for
 32K-point, 1024-instance NTT.
 
-.. figure:: figures/NTT_perf_A1_cropped.pdf
+.. figure:: _images/NTT_perf_A1_cropped.png
    :alt: Benchmark for NTT on Device2
    :name: fig:ntt-device2-bench
    :width: 80.0%
@@ -2706,7 +2706,7 @@ baseline by 1.92X in average. Further enabling assembly-level
 optimizations, we manage to reach 2.32X -- 2.41X acceleration for all
 five HE evaluation routines on this single-tile Intel GPU.
 
-.. figure:: figures/stacked_device2_cropped.pdf
+.. figure:: _images/stacked_device2_cropped.png
    :alt: Benchmarking HE evaluation routines on Device2
    :name: fig:routine-device2-bench
    :width: 80.0%
@@ -2751,7 +2751,7 @@ on this smaller GPU.
 
 
 
-.. figure:: figures/matMul_cropped.pdf
+.. figure:: _images/matMul_cropped.png
    :alt: elementwise polynomial multiplication on Device1
    :name: fig:PolyMultA
    :width: 70.0%
@@ -2759,7 +2759,7 @@ on this smaller GPU.
    elementwise polynomial multiplication on Device1
 
 
-.. figure:: figures/matMul_dev2_cropped.pdf
+.. figure:: _images/matMul_dev2_cropped.png
    :alt: elementwise polynomial multiplication on Device2
    :name: fig:PolyMultB
    :width: 70.0%
