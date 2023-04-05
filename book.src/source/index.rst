@@ -6,12 +6,33 @@
 
    \scriptsize
 
+.. |frontmatter| raw:: html
+
+	Alexander Lyashevsky, Intel Corporation, Santa Clara, CA, USA<br/>
+	Alexey Titov, Intel Corporation, Santa Clara, CA, USA<br/>
+	Yiqin Qiu, Intel Corporation, Santa Clara, CA, USA<br/>
+	Yujia Zhai, University of California, Riverside, CA, USA<br/>
+	Edited by James Reinders with assistance from Henry Gabb and John Pennycook<br/>
+	ISBN-13 (pbk): 979-8-88638-000-2<br/>
+	ISBN-13 (electronic): 979-8-88638-001-9<br/>
+	Copyright © 2023 by Codeplay Software, an independently managed wholly owned subsidiary of Intel Corporation<br/>
+	This book is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a> or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. The images or other third party material in this book are included in the book's Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the book's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.<br/>
+	Trademarked names, logos, and images may appear in this book. Rather than use a trademark symbol with every occurrence of a trademarked name, logo, or image we use the names, logos, and images only in an editorial fashion and to the benefit ofthe trademark owner, with no intention of infringement of the trademark.<br/>
+	The use in this publication of trade names, trademarks, service marks, and similar terms, even if they are not identified as such, is not to be taken as an expression of opinion as to whether or not they are subject to proprietary rights.<br/>
+	SYCL and the SYCL logo are trademarks of the Khronos Group Inc. in the U.S. and/or other countries. Intel, the Intel logo, Intel Optane, and Xeon are trademarks of Intel Corporation in the U.S. and/or other countries. Khronos and the Khronos Group logo are trademarks of the Khronos Group Inc. in the U.S. and/or other countries. OpenCL and the OpenCL logo are trademarks of Apple Inc. in the U.S. and/or other countries. OpenMP and the OpenMP logo are trademarks of the OpenMP Architecture Review Board in the U.S. and/or other countries.
+	While the advice and information in this book are believed to be true and accurate atthe date of publication, neither the authors nor the editors nor the publisher can accept any legal responsibility for any errors or omissions that may be made.  The authors, editors, copyright holder, and publisher make no warranty, express or implied, with respect to the material contained herein.<br/>
+	Any source code or other supplementary material referenced is available to readers online. To find exactly where, visit the sparklers directory at <a href="https://github.com/syclsparklers/directory/blob/main/README.md">https://github.com/syclsparklers/directory/blob/main/README.md</a> (or use the tinyurl link: <a href="https://tinyurl.com/syclsparklers">https://tinyurl.com/syclsparklers</a>).<br/>
+
 
 -------------------------------------------------------------------
 XeHE: An Intel GPU Accelerated Fully Homomorphic Encryption Library
 -------------------------------------------------------------------
 
+|frontmatter|
+
+
 .. index:: ! acknowledgements
+
 
 Acknowledgements
 ================
